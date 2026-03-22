@@ -10,7 +10,6 @@ spec:
   type: {{ .Values.relay.service.type }}
   ports:
     - port: {{ .Values.relay.service.port }}
-    h
       targetPort: {{ .Values.relay.service.name }}
       protocol: TCP
       name: {{ .Values.relay.service.name }}
