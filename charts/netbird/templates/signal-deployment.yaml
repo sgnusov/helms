@@ -46,7 +46,7 @@ spec:
             - "--log-file"
             - "console"
           ports:
-            - name: containerPort
+            - name: containerport
               containerPort: {{ .Values.signal.containerPort }}
               protocol: TCP
             - name: metrics
