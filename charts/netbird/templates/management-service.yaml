@@ -12,18 +12,17 @@ spec:
     - port: {{ .Values.management.service.port }}
       targetPort: {{ .Values.management.service.name }}
       protocol: TCP
-      appProtocol: kubernetes.io/h2c
       name: {{ .Values.management.service.name }}
-    - port: {{ .Values.management.service.wsPort }}
-      targetPort: {{ .Values.management.service.name }}
-      protocol: TCP
-      appProtocol: kubernetes.io/ws
-      name: {{ .Values.management.service.wsName }}
     - port: {{ .Values.management.service.grpcPort }}
       targetPort: {{ .Values.management.service.name }}
       protocol: TCP
       appProtocol: kubernetes.io/h2c
       name: {{ .Values.management.service.grpcName }}
+    - port: {{ .Values.management.service.wsPort }}
+      targetPort: {{ .Values.management.service.name }}
+      protocol: TCP
+      appProtocol: kubernetes.io/ws
+      name: {{ .Values.management.service.wsName }}
     {{- if .Values.management.metrics.enabled }}
     - port: {{ .Values.management.metrics.port }}
       targetPort: metrics
