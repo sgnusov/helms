@@ -10,10 +10,16 @@ metadata:
 spec:
   type: {{ .Values.signal.service.type }}
   ports:
-    - port: {{ .Values.signal.service.port }}
+    - port: {{ .Values.signal.service.grpcPort }}
       targetPort: {{ .Values.signal.service.name }}
       protocol: TCP
-      name: {{ .Values.signal.service.name }}
+      appProtocol: kubernetes.io/h2c
+      name: {{ .Values.signal.service.grpcNname }}
+    - port: {{ .Values.signal.service.wsPort }}
+      targetPort: {{ .Values.signal.service.name }}
+      protocol: TCP
+      appProtocol: kubernetes.io/ws
+      name: {{ .Values.signal.service.wsName }}
     {{- if .Values.signal.metrics.enabled }}
     - port: {{ .Values.signal.metrics.port }}
       targetPort: metrics

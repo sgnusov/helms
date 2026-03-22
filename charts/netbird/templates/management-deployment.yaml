@@ -84,9 +84,6 @@ spec:
             - name: http
               containerPort: {{ .Values.management.containerPort }}
               protocol: TCP
-            - name: grpc
-              containerPort: {{ .Values.management.grpcContainerPort }}
-              protocol: TCP
             - name: metrics
               containerPort: {{ .Values.management.metrics.port }}
               protocol: TCP

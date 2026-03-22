@@ -146,13 +146,13 @@ management:
     ##
     name: http
 
-    wsPort: 180
+    grpcPort: 180
+
+    grpcName: grpc
+
+    wsPort: 280
 
     wsName: ws
-
-  ## @param management.grpcContainerPort Container port for the management service.
-  ##
-  grpcContainerPort: 33073
 
   serviceGrpc:
     ## @param management.serviceGrpc.type Service type for the management component.
@@ -388,10 +388,14 @@ signal:
     ## @param signal.service.type Service type for the signal component.
     ##
     type: ClusterIP
-    name: grpc
+    grpcName: grpc
     ## @param signal.service.port Port for the signal service.
     ##
-    port: 80
+    grpcPort: 180
+    wsName: ws
+    ## @param signal.service.port Port for the signal service.
+    ##
+    wsPort: 280
 
   ingress:
     ## @param signal.ingress.enabled Enable or disable ingress for the signal component.
