@@ -138,7 +138,6 @@ management:
     ##
     type: ClusterIP
 
-
     ## @param management.service.port Port for the management service.
     ##
     port: 80
@@ -146,6 +145,10 @@ management:
     ## @param management.service.name Name for the management service.
     ##
     name: http
+
+    wsPort: 180
+
+    wsName: ws
 
   ## @param management.grpcContainerPort Container port for the management service.
   ##
@@ -155,7 +158,6 @@ management:
     ## @param management.serviceGrpc.type Service type for the management component.
     ##
     type: ClusterIP
-
 
     ## @param management.serviceGrpc.port Port for the management service.
     ##
@@ -475,7 +477,7 @@ signal:
 
   ## @param signal.initContainers Init containers for the signal pod.
   initContainers: []
-  
+
 ## @section NetBird Relay Parameters
 
 relay:
@@ -574,7 +576,6 @@ relay:
     ## @param relay.service.type Service type for the relay component.
     ##
     type: ClusterIP
-
 
     ## @param relay.service.port Port for the relay service.
     ##
@@ -738,7 +739,6 @@ dashboard:
     ## @param dashboard.service.type
     type: ClusterIP
 
-
     ## @param dashboard.service.port
     port: 80
 
@@ -888,4 +888,3 @@ metrics:
     ##   prometheus: my-prometheus
     ##
     selector: {}
-
