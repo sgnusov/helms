@@ -11,12 +11,12 @@ spec:
   type: {{ .Values.signal.service.type }}
   ports:
     - port: {{ .Values.signal.service.grpcPort }}
-      targetPort: {{ .Values.signal.service.name }}
+      targetPort: containerPort
       protocol: TCP
       appProtocol: kubernetes.io/h2c
       name: {{ .Values.signal.service.grpcName }}
     - port: {{ .Values.signal.service.wsPort }}
-      targetPort: {{ .Values.signal.service.name }}
+      targetPort: containerPort
       protocol: TCP
       appProtocol: kubernetes.io/ws
       name: {{ .Values.signal.service.wsName }}

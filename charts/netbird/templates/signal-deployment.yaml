@@ -40,13 +40,13 @@ spec:
           imagePullPolicy: {{ .Values.signal.image.pullPolicy }}
           args:
             - "--port"
-            - "{{ .Values.signal.service.port }}"
+            - "{{ .Values.signal.containerPort }}"
             - "--log-level"
             - "{{ .Values.signal.logLevel }}"
             - "--log-file"
             - "console"
           ports:
-            - name: grpc
+            - name: containerPort
               containerPort: {{ .Values.signal.containerPort }}
               protocol: TCP
             - name: metrics
