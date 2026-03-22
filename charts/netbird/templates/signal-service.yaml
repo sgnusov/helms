@@ -14,7 +14,7 @@ spec:
       targetPort: {{ .Values.signal.service.name }}
       protocol: TCP
       appProtocol: kubernetes.io/h2c
-      name: {{ .Values.signal.service.grpcNname }}
+      name: {{ .Values.signal.service.grpcName }}
     - port: {{ .Values.signal.service.wsPort }}
       targetPort: {{ .Values.signal.service.name }}
       protocol: TCP
