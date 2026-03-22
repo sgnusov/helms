@@ -43,8 +43,12 @@ spec:
               containerPort: {{ .Values.relay.containerPort }}
               protocol: TCP
             - name: metrics
-              containerPort: {{ .Values.relay.metrics.port}}
+              containerPort: {{ .Values.relay.metrics.port }}
               protocol: TCP
+            - name: stun
+              containerPort: {{ .Values.relay.stunPort }}
+              hostPort: {{ .Values.relay.stunPort }}
+              protocol: UDP
           {{- if .Values.relay.livenessProbe }}
             {{- with .Values.relay.livenessProbe }}
           livenessProbe:

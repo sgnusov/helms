@@ -568,6 +568,7 @@ relay:
   ## @param relay.containerPort Container port for the relay service.
   ##
   containerPort: 33080
+  stunPort: 3478
 
   service:
     ## @param relay.service.type Service type for the relay component.
