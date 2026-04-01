@@ -456,7 +456,7 @@ signal:
     initialDelaySeconds: 5
     periodSeconds: 5
     tcpSocket:
-      port: grpc
+      port: containerport
 
   ## @param signal.readinessProbe for the signal component.
   ##
@@ -464,7 +464,7 @@ signal:
     initialDelaySeconds: 5
     periodSeconds: 5
     tcpSocket:
-      port: grpc
+      port: containerport
 
   ## @param signal.volumeMounts Volume mounts for the signal pod.
   volumeMounts: []
